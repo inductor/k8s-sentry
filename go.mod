@@ -5,6 +5,7 @@ go 1.20
 require (
 	github.com/getsentry/sentry-go v0.21.0
 	github.com/hashicorp/golang-lru v0.5.1
+	github.com/hashicorp/golang-lru/v2 v2.0.2
 	k8s.io/api v0.27.1
 	k8s.io/apimachinery v0.27.1
 	k8s.io/client-go v0.27.1
