@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      IMAGE: wichert/k8s-sentry
+      IMAGE: ghcr.io/inductor/k8s-sentry
 
     steps:
       - uses: actions/checkout@v3
@@ -59,7 +59,7 @@ jobs:
           context: ./
           file: ./Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
-          push: ${{ github.ref == 'refs/heads/main' }}
+          push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
