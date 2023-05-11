@@ -162,9 +162,9 @@ func (app *application) handlePodUpdate(oldObj, newObj interface{}) {
 			fingerprintFromMeta(&pod.ObjectMeta)...)
 
 		sentryEvent.Tags["namespace"] = pod.Namespace
-		if pod.ClusterName != "" {
-			sentryEvent.Tags["cluster"] = pod.ClusterName
-		}
+		// if pod.ClusterName != "" {
+		// 	sentryEvent.Tags["cluster"] = pod.ClusterName
+		// }
 		sentryEvent.Tags["kind"] = pod.Kind
 		for k, v := range pod.ObjectMeta.Labels {
 			sentryEvent.Tags[k] = v
@@ -233,9 +233,9 @@ func (app application) handleEventAdd(obj interface{}) {
 
 	sentryEvent.Tags["namespace"] = evt.InvolvedObject.Namespace
 	sentryEvent.Tags["component"] = evt.Source.Component
-	if evt.ClusterName != "" {
-		sentryEvent.Tags["cluster"] = evt.ClusterName
-	}
+	// if evt.ClusterName != "" {
+	// 	sentryEvent.Tags["cluster"] = evt.ClusterName
+	// }
 	sentryEvent.Tags["reason"] = evt.Reason
 	sentryEvent.Tags["kind"] = evt.InvolvedObject.Kind
 	sentryEvent.Tags["type"] = evt.Type
