@@ -16,6 +16,8 @@ limitations under the License.
 package main
 
 import (
+	"context"
+
 	"github.com/getsentry/sentry-go"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -45,6 +47,7 @@ func (h PodEventHandler) Tags() map[string]string {
 // NewPodEventHandler creates a new PodEventHandler instance
 func NewPodEventHandler(app *application, evt *v1.Event) EventHandler {
 	pod, err := app.clientset.CoreV1().Pods(evt.Namespace).Get(
+		context.TODO(),
 		evt.InvolvedObject.Name,
 		metav1.GetOptions{
 			ResourceVersion: evt.InvolvedObject.ResourceVersion,
