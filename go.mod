@@ -7,7 +7,7 @@ require (
 	github.com/hashicorp/golang-lru v0.5.1
 	k8s.io/api v0.27.2
 	k8s.io/apimachinery v0.27.2
-	k8s.io/client-go v0.27.2
+	k8s.io/client-go v11.0.0+incompatible
 )
 
 require (
