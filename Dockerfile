@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.4
 ### builder ###
-FROM golang:1.20-bullseye AS builder
+FROM golang:1.21-bullseye AS builder
 
 WORKDIR /app
 # Copy the Go Modules
