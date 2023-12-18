@@ -1,4 +1,4 @@
-# syntax=docker/dockerfile:1.4
+# syntax=docker/dockerfile:1.6
 ### builder ###
 FROM golang:1.20-bullseye AS builder
 
