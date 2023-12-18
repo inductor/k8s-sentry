@@ -1,6 +1,6 @@
 module inductor/k8s-sentry
 
-go 1.20
+go 1.21
 
 require (
 	github.com/getsentry/sentry-go v0.25.0
